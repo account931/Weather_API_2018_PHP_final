@@ -18,7 +18,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
       <link rel="stylesheet" type="text/css" media="all" href="css/myWeathers.css">
-      <script src="weather_core.js"></script><!--  Core Random JS-->
+      <script src="core_js/weather_core.js"></script><!--  Core Random JS-->
 	  
 	  
 	
