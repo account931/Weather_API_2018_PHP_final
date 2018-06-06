@@ -130,6 +130,7 @@ $(document).ready(function(){
     // **************************************************************************************
     //                                                                                     **
 	$("#submit").click(function() {   
+	//const cyrillicPattern = /[\u0400-\u04FF]/; russ letters
 	
         if ($("#citytext").val().trim()==''){
 			if ( !$("#qrResult").is(':visible')) {  //will never fire, we changed the div property to always visible, we don't hide it, we html("") it
@@ -141,9 +142,11 @@ $(document).ready(function(){
 			return false;
 			
 			//check if the input is not russian
-		} else if ($("#citytext").val().trim().match(/[\wа-я]+/ig)){
+			
+		} else if ( /[\u0400-\u04FF]/.test(  $("#citytext").val().trim()  ) ){
 			 $("#qrResult").stop().fadeOut("slow",function(){ $(this).html('<div class="red alert alert-danger"><h3><center><span class="glyphicon glyphicon-log-in"></span><br><br>No cities in Russian </center> </h3></div>')}).fadeIn(2000);
 			return false;
+			
 		} else {
 			//Run core function onClick
 			runCityName();
@@ -189,8 +192,10 @@ $(document).ready(function(){
 		  myAjaxRequest();
 		  //  END Used to run DUBLICATE getWeather(); on your custom city click, can not run myAction() with getWeather() inside, though runs it on default load
 		  
-		  //Scroll to results
-	      scrollResults("#weather_header"); //scroll the page down to weather results
+		  //Scroll to results in Mobile only
+		  if(screen.width <= 640){ 
+	          scrollResults("#weather_header"); //scroll the page down to weather results
+		  }
 		  $("#qrResult").html(''); // Mega error, should use html('') instead of hide(900)
 		  
 		  
@@ -275,7 +280,7 @@ $(document).ready(function(){
            var formattedDate = ('0' + date.getDate()).slice(-2) + '/' + ('0' + (date.getMonth() + 1)).slice(-2) /* + '/' + date.getFullYear() + ' ' + ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2) */;
             
            //get the day of the week			
-		   var daysArr = ['Sund','Mond','Tues','Wedn','Thurs','Frid','Satur'];
+		   var daysArr = ['Sund','Mond','Tues','Wedn','Thurs','Frid_','Satur'];
            var dayOfWeek = daysArr[new Date(data.list[i].dt * 1000).getDay()];
            //alert(dayOfWeek);		   
    
@@ -358,7 +363,7 @@ $(document).ready(function(){
 					  "</div>" +
 					  
 					  "<div class='col-sm-2 col-xs-2'    >" +	  
-					      "Wind: " + data.list[i].speed + " m/h" +
+					      setApiResponse_Language("Wind") + " " + data.list[i].speed + " m/h" +
 					  "</div>" +
 					  
 					  // Weather description (condition, description)+icon(visible in mobile only (class='weather_icon_mob))
@@ -560,7 +565,7 @@ $(document).ready(function(){
 	
 	function changeAllLanguages()
 	{
-		changeLanguages("Russ", "Eng", ".lang");
+		changeLanguages("Ru", "Eng", ".lang");
 		changeLanguages("Weather on-line 7 days", "Погода в мире на 7 дней ", "#textChange");
 		changeLanguages("Your city", "Ваш город", "#cityLable");
 		changeLanguages("Submit", "Ввод", "#submit");
@@ -599,17 +604,33 @@ $(document).ready(function(){
 						 
 	//JS object with all translation for API dynamic response, use Object keys without No blankspace (i.e NOT "light rain", but "light_rain")					 
 	var Eng_Ru_Object = {
-		                Sund:'Воск', Mond:'Понд', Tues:'Втор', Wedn:'Сред', Thurs:'Четв', Frid:'Пятн', Satur:'Субб', //eng week days name must be the same as in daysArr
+		                Sund:'Воск', Mond:'Понд', Tues:'Втор', Wedn:'Сред', Thurs:'Четв', Frid_:'Пятн', Satur:'Субб', //eng week days name must be the same as in daysArr
 						Population: 'Население',
+						Wind: 'ветер',
 						today:  'сегодня ',
 						Weather_in: 'Погода в',
 						for_7_days: 'на 7 дней',
 						
+						
 		                rain:  'дождь',
+						moderate_rain: 'небольшой дождь',
 		                light_rain : 'небольшой дождь',
 		                scattered_clouds: 'облачно',
 		                sky_is_clear: 'ясно',
 						broken_clouds: 'тучи',
+						overcast_clouds: 'тучи',
+						
+						clear_sky: 'ясно',
+						few_clouds: 'малооблачно',
+						shower_rain: 'дождь',
+						thunderstorm: 'гроза',
+						snow: 'снег',
+						mist: 'туман',
+						thunderstorm_with_light_rain: 'гроза с небольшим дождем',
+						thunderstorm_with_rain: 'гроза с дождем',
+						thunderstorm_with_heavy_rain: 'гроза с ливнем',
+						light_thunderstorm: 'небольшая гроза',
+					
 	                    }
 	
 	//https://openweathermap.org/weather-conditions
@@ -633,7 +654,8 @@ $(document).ready(function(){
 		    // convert value in format ("light rain" to "light_rain")
 			var adopted_ApiString = singleApiString.replace(new RegExp(" ",'g'),  "_"); // replace blankspace in string(if any) to "_", ie "sky_is_clear" as keys in Eng_Ru_Object
 			if (!Eng_Ru_Object.hasOwnProperty(adopted_ApiString)){ // if the translation is not described in Eng_Ru_Object
-				var end = 'Not set';
+				//var end = 'Not translated';
+				var end = singleApiString; //return English variant
 			} else {
 				var end = Eng_Ru_Object[adopted_ApiString]; // the value of Eng_Ru_Object.rain
 			}
