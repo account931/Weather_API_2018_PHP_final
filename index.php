@@ -76,9 +76,13 @@
 						  <datalist id="character">
 						      
 							  <option value="Amsterdam"></option>
+							  <option value="Anchorage"></option> 
+							  <option value="Anuradhapura"></option>
 							  <option value="Athens"></option>
 							  <option value="Copenhagen"></option>
+							  <option value="Delhi"></option>
 							  <option value="Dubai"></option>
+							  <option value="Honolulu"></option>
 							  
 							  <option value="Istanbul"></option>
 							  <option value="Kuala Lumpur"></option>
@@ -86,12 +90,15 @@
 							  <option value="Kyiv"></option>
 							  
 							  <option value="London"></option>
+							  <option value="Manila"></option>
 							  <option value="Marrakech"></option>
 							  <option value="Miami"></option> 
-                              <option value="Milan"></option> 							  
-                              <option value="Odessa"></option>
+                              <option value="Milan"></option> 
+                              <option value="Moscow"></option> 							  
+                              <option value="Odessa,UA"></option>
 							  <option value="Rome"></option>
 							  <option value="Stockholm"></option>
+							  <option value="Sydney"></option>
 							  <option value="Tokyo"></option>
 							  <option value="Vienna"></option>
 							  <option value="Yakutsk"></option>
