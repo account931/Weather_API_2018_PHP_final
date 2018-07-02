@@ -285,9 +285,15 @@ $(document).ready(function(){
            //alert(dayOfWeek);		   
    
        
-   
+          
           // calling the function to construct the whole Div with results, arg[counter which starts from 1, not 0 for Div naming(div1)/, for()iteration value/, Unix data from a]ax, converted to norn(29/05)/, all ajax data response, dayOfWeek(Friday))
-          constructAjaxResponse(myIteration, i, formattedDate, data, dayOfWeek);
+          //flag {themeFlag} is used to distinguish if "Change Theme1 or 2" was clicked
+	       if (themeFlag == 2){ // if u click "Change theme button", we run construct with Colors
+			  constructAjaxResponseColor(myIteration, i, formattedDate, data, dayOfWeek);
+	          
+		  } else { //// if NO click "Change theme button", we run default construct
+	          constructAjaxResponse(myIteration, i, formattedDate, data, dayOfWeek); //temp disabled
+		  }
 					  
          //document.getElementById('weather' + myIteration).innerHTML = weather_day;
 	     weather_day_all = weather_day_all + weather_day; // getting all days in one varibale
@@ -331,7 +337,7 @@ $(document).ready(function(){
 	function constructAjaxResponse(iteration, i, formattedDate, data, dayOfWeek) //(iteration=i+1{to form div id="weather1"}), i=i, formattedDate=29/05,data=whole json answer, dayOfWeek=Sunday)
 	{
 		//getting 2 colors
-		var colorArray = ['bg-primary', 'bg-info'];
+		var colorArray = ['bg-primary', 'bg-info']; //bg-primary
 		var colorFlag = 1;
 		    if(i%2 == 0 ){
 		       colorFlag = 0;	
@@ -353,7 +359,7 @@ $(document).ready(function(){
 	                       setApiResponse_Language(dayOfWeek)  + " " + formattedDate +  // Date, city in <title>
 					  "</div>" +	
 					  
-                      "<div class='col-sm-2 col-xs-2'>" +					  
+                      "<div class='col-sm-2 col-xs-2'> +" +					  
 					       Math.floor(data.list[i].temp.day) + "&#186;" + // average temp
 					  "</div>" +
 					  
@@ -400,7 +406,69 @@ $(document).ready(function(){
 	
 	
 	
+	function constructAjaxResponseColor(iteration, i, formattedDate, data, dayOfWeek) //(iteration=i+1{to form div id="weather1"}), i=i, formattedDate=29/05,data=whole json answer, dayOfWeek=Sunday)
+	{
+		
+		//getting 2 colors
+		var colorArray = ['bg-primary', 'bg-info']; //bg-primary
+		var colorFlag = 1;
+		    if(i%2 == 0 ){
+		       colorFlag = 0;	
+		    } 
+			
+		 // getting  today date and today weather, icon (the 1st day) for adding TODAY date in City header	
+            if (i==0){
+			    todayXconstruct = formattedDate;
+                todayTemp =  Math.floor(data.list[i].temp.min) + "&#186; +" + Math.floor(data.list[i].temp.max) + "&#186;" ;	
+                todayIcon = "<img class='weather_icon' style='width:8%;' src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon +  ".png'/>"			
+			}	
+			
+		
+        //getting every day in the loop
+        weather_day = "<div style='background-color:lavender;' class='myStyle row' id='weather" + iteration + "'><center>" +  // <div class='row bg-primary' id='weather1'>
+		              
+					  // Date and ictyname in <title>
+	                  "<div class='col-sm-2 col-xs-2 color bg-primary' title='" +data.city.name + " '>" +
+	                       setApiResponse_Language(dayOfWeek)  + " " + formattedDate +  // Date, city in <title>
+					  "</div>" +	
+					  
+					  
+					  // min and max temp, symbol{&#186;} is a degree mark, temp is Math.floor() to prevent 19.87C
+					  "<div class='col-sm-2 col-xs-2 color color-lawn'>" +
+	                      "+" + Math.floor(data.list[i].temp.min) + "&#186; +" + Math.floor(data.list[i].temp.max) + "&#186;" +
+					  "</div>" +
+					  
+					  "<div class='col-sm-2 col-xs-2 color color-yellow'    >" +	  
+					      setApiResponse_Language("Wind") + ": " + data.list[i].speed + " m/h" +
+					  "</div>" +
+					  
+					  // Weather description (condition, description)
+					  "<div class='col-sm-3 col-xs-3 color color-red'  >" +
+					     setApiResponse_Language( data.list[i].weather[0].description ) +
+					  "</div>" + 
+					  
+					    // Weather icon, visible in web and mobile
+					  "<div class='col-sm-2 col-xs-3'  >" +
+						      "<img class='weather_icon2'  src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon +  ".png'/>" +
+					  "</div>" + 
+					  
+					  "</center></div>";
+					  // End construct of var weather_day =  
+					  
+					  
+					  //Construction city info, name, country, population, lat/lon + weather for today only(Used in City header)
+					  city_info = "<br><h3>" + setApiResponse_Language('Weather in') + " "  + data.city.name + ", " + data.city.country + " " + setApiResponse_Language("for 7 days") + "<h3>" +
+					              "<h6>" + 
+								  setApiResponse_Language("Population") + ": " + data.city.population +  ", lon:"  + data.city.coord.lon + ", lat:" + data.city.coord.lat + "<br>" /* + todayIcon */ +  
+								  setApiResponse_Language("today") + " " + todayXconstruct + " +" + todayTemp +   "<br>" + todayIcon    // today date and today tempature
+								  "<br></h6>";
+					              
+					  $('#weather_header').html(city_info);
+	}
 	
+	// **                                                                                  **
+    // **************************************************************************************
+    // **************************************************************************************
 	
 	
 	
@@ -484,16 +552,16 @@ $(document).ready(function(){
 			//var retrievedObject = JSON.parse(retrievedObject);
 			//productsObject = retrievedObject;
 			
-			alert ("Loc St exists " +  localStorage.getItem("localStorageLanguageSetting") );
+			//alert ("Loc St exists " +  localStorage.getItem("localStorageLanguageSetting") );
     } else {
         
 		// if Loc Storage does not exist (i.e Object was never initialized), create a new Object, set English as default
 	    if (typeof localStorage.getItem("localStorageLanguageSetting") == "undefined") {
-            alert("Object will be created now");
+            //alert("Object will be created now");
 		    //var productsObject = { }; //empty object for all cart products
 			localStorage.setItem('localStorageLanguageSetting', 'engLoc');
         } else {
-		    alert("Object Exists"); // will never fire
+		    //alert("Object Exists"); // will never fire
 	    }
 	}	
 	
@@ -619,6 +687,7 @@ $(document).ready(function(){
 		                sky_is_clear: 'ясно',
 						broken_clouds: 'тучи',
 						overcast_clouds: 'тучи',
+						heavy_intensity_rain: 'ливень',
 						
 						clear_sky: 'ясно',
 						few_clouds: 'малооблачно',

@@ -2,6 +2,9 @@
 	margin:4%;
   }
 
+  
+  
+  
 /* ---------------------------------------- Mobile */
 @media screen and (max-width: 480px) { 
  
@@ -19,16 +22,27 @@
 	
 	 /* weather icon in mobile 7 days, visible in mobile only */
     .weather_icon_mob{
+		display:block;
 		 width:97%;	      
      }
   
    /* weather icon in mobile 7 days, hidden in mobile */
     .weather_icon{
-		display: none;	      
+		/* width:40px%; */
+		display: none;
+        		
+     }
+	 
+	 /* Weather icon in  for function constructAjaxResponseColor Ver2 */	
+    .weather_icon2{
+	      width: 170%;
      }
   
 }
 /* ------------------------------------- END Mobile */
+
+
+
 
 
  /* weather icon in 7 days, hidden in mobile */
@@ -36,9 +50,14 @@
 	      width: 27%;
      }
 	
+/* Color var 2 for function constructAjaxResponseColor */	
+.weather_icon2{
+	      width: 37%;
+     }
+	
 /* weather icon in 7 days, hidden in web */	
   .weather_icon_mob{
-	      width:0%;
+	      display:none;
      }
 
 
@@ -79,6 +98,8 @@
   .myStyle {
 	  padding-top:1em;
 	  padding-bottom:1em;
+	  border:1px solid white;
+	  border-radius:12px;
   }
   
   .myStyle:hover{
@@ -104,7 +125,7 @@
   }
   
    /* Set the header object radius on hover*/
-  .colorAnimate:hover {
+  .colorAnimate_PREV:hover {
 	  border-radius: 53px;
       background:red;
   }
@@ -149,6 +170,49 @@
 	color: black;
 }
 
+
+  /*  Theme Selection at top right */
+.theme{
+	position: absolute;
+	left: 0.5%;
+	top:0.2em;
+	cursor:pointer;
+	font-size:0.3em;
+}
+
+.them:hover {
+	color: white;
+}
+
+  
+  /* CSS for function constructAjaxResponseColor, colorful version 2 */
+ .color{
+	border-radius:10px; 
+	height:43px;
+  }
+  
+ .color-red{
+	background:red;
+  }
+  
+  .color-yellow{
+	background:yellow;
+  }
+  
+   .color-lawn{
+	background:lime;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

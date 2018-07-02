@@ -13,12 +13,14 @@
 	  
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 
 	  
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
       <link rel="stylesheet" type="text/css" media="all" href="css/myWeathers.css">
       <script src="core_js/weather_core.js"></script><!--  Core Random JS-->
+	  <script src="core_js/theme_switcher.js"></script><!--  Theme switcher JS-->
 	  
 	  
 	
@@ -38,10 +40,11 @@
 	   
          <h1 id="h1Text">
              <img id ="wLogo" class="shrink-large" src="images/weather2.png"/>		 
-		     <span id="textChange" class="textShadow"> Weather on-line PHP</span> 
+		     <span id="textChange" class="textShadow"> Weather on-line 7 days</span> 
 		     <!--</span> <img src="http://78.media.tumblr.com/tumblr_m2hq5tt3ma1qav3uso1_400.gif" style="width:3%"/>--> 
 			 <img id ="wLogo2" src="images/weather.png"/>
 			 <p class="language"><a class="lang" href="#">UA</a></p>
+			 <p class="theme"><a class="them" href="#">*</a></p>
 			 
 		 </h1> 
 		   
@@ -154,7 +157,7 @@
 				<hr class="lavender-color " style="width:98%;height:8px;">
 				
 				<!--- Header with city, population--->
-				<div class="col-sm-12 col-xs-12 lavender-color myShadow" id="weather_header">
+				<div class="col-sm-12 col-xs-12 lavender-color myShadow " id="weather_header">
 				    <!--Weather in <span id='cityName'>Kyiv</span> for 7 days--> <!-- Content NOT USED, content will be JS html-->
 				</div> 
 				<br><br>
