@@ -1,3 +1,6 @@
+//NOT USED=> SWITCHED to changeStyleTheme.js
+
+
 var themeFlag = 1; //flag to distinguish if "Change Theme1 or 2" was clicked and what to {constructAjaxResponse()} or  {constructAjaxResponseColor()}run 
 
 $(document).ready(function(){
