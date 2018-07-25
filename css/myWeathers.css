@@ -372,3 +372,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1dbed', end
 
 
 
+
+
+/* Class that sets background-image */
+.head-style{
+	color:white;
+	background-color:lavender;padding:10px;
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQsQf2-zwuStKf6u2V2HE_nCy9rRvk5M8ag043FAenQbOrCXY3tA');   /* url('../images/bg-pattern.jpg');*/
+	text-shadow: 1px 1px 2px black, 0 0 1em red; /* Shadow params */
+}
+
+

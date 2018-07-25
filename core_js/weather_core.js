@@ -337,7 +337,7 @@ $(document).ready(function(){
 	function constructAjaxResponse(iteration, i, formattedDate, data, dayOfWeek) //(iteration=i+1{to form div id="weather1"}), i=i, formattedDate=29/05,data=whole json answer, dayOfWeek=Sunday)
 	{
 		//getting 2 colors
-		var colorArray = ['bg-primary', 'bg-info']; //bg-primary
+		var colorArray = ['head-style', 'bg-primary']; //bg-primary  bg-info  head-style
 		var colorFlag = 1;
 		    if(i%2 == 0 ){
 		       colorFlag = 0;	

@@ -20,7 +20,8 @@
 
       <link rel="stylesheet" type="text/css" media="all" href="css/myWeathers.css">
       <script src="core_js/weather_core.js"></script><!--  Core Random JS-->
-	  <script src="core_js/theme_switcher.js"></script><!--  Theme switcher JS-->
+	  <script src="core_js/theme_switcher.js"></script><!--  Theme switcher JS ->DEPRICATED-->
+	  <script src="core_js/changeStyleTheme.js"></script><!--  change wallpapers,changeStyleTheme JS-->
 	  
 	  
 	
@@ -36,7 +37,7 @@
 
      <body>
 	   
-       <div id="headX" class=" text-center myShadow colorAnimate" style ='background-color:lavender;padding:10px;'> <!--#2ba6cb;-->
+       <div id="headX" class=" text-center myShadow colorAnimate head-style" style ='background-color:lavender;padding:10px;'> <!--#2ba6cb;--> <!--.head-style sets bg image-->
 	   
          <h1 id="h1Text">
              <img id ="wLogo" class="shrink-large" src="images/weather2.png"/>		 
@@ -67,7 +68,7 @@
 		   
 		   
 		   
-		      <div class="col-sm-4 col-xs-12 myShadow shrink" style="background-color:lavender;">
+		      <div class="col-sm-4 col-xs-12 myShadow shrink head-style" style="background-color:lavender;">
 			  
 			  
              
@@ -157,7 +158,7 @@
 				<hr class="lavender-color " style="width:98%;height:8px;">
 				
 				<!--- Header with city, population--->
-				<div class="col-sm-12 col-xs-12 lavender-color myShadow " id="weather_header">
+				<div class="col-sm-12 col-xs-12 lavender-color myShadow head-style " id="weather_header">
 				    <!--Weather in <span id='cityName'>Kyiv</span> for 7 days--> <!-- Content NOT USED, content will be JS html-->
 				</div> 
 				<br><br>
@@ -214,6 +215,16 @@
 					<?php  echo date("Y"); ?>
 				</div>
 		<!--END Footer ---->  
+		
+		
+		
+		
+		
+		
+		<!-----------------  Button to change Style theme------------------------->
+	   <input type="button" class="btn" value=">>" id="changeStyle" style="position:absolute;top:0px;left:0px;" title="click to change theme"/>
+	   <!-----------------  Button to change Style theme------------------------->
+		
 		
 		
 		
