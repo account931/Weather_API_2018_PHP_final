@@ -37,7 +37,7 @@
 
      <body>
 	   
-       <div id="headX" class=" text-center myShadow colorAnimate head-style" style ='background-color:lavender;padding:10px;'> <!--#2ba6cb;--> <!--.head-style sets bg image-->
+       <div id="headX" class=" text-center myShadow colorAnimate head-style" style ='background-color:lavender;padding:10px;'> <!--#2ba6cb;--> <!--.head-style sets bg image, .colorAnimate sets animation-->
 	   
          <h1 id="h1Text">
              <img id ="wLogo" class="shrink-large" src="images/weather2.png"/>		 
@@ -68,7 +68,7 @@
 		   
 		   
 		   
-		      <div class="col-sm-4 col-xs-12 myShadow shrink head-style" style="background-color:lavender;">
+		      <div class="col-sm-4 col-xs-12 myShadow shrink colorAnimate head-style" style="background-color:lavender;">  <!--.head-style sets bg image, .colorAnimate sets animation-->
 			  
 			  
              
@@ -158,7 +158,7 @@
 				<hr class="lavender-color " style="width:98%;height:8px;">
 				
 				<!--- Header with city, population--->
-				<div class="col-sm-12 col-xs-12 lavender-color myShadow head-style " id="weather_header">
+				<div class="col-sm-12 col-xs-12 lavender-color myShadow colorAnimate head-style " id="weather_header">  <!--.head-style sets bg image, .colorAnimate sets animation-->
 				    <!--Weather in <span id='cityName'>Kyiv</span> for 7 days--> <!-- Content NOT USED, content will be JS html-->
 				</div> 
 				<br><br>

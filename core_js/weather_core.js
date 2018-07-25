@@ -337,7 +337,7 @@ $(document).ready(function(){
 	function constructAjaxResponse(iteration, i, formattedDate, data, dayOfWeek) //(iteration=i+1{to form div id="weather1"}), i=i, formattedDate=29/05,data=whole json answer, dayOfWeek=Sunday)
 	{
 		//getting 2 colors
-		var colorArray = ['head-style', 'bg-primary']; //bg-primary  bg-info  head-style
+		var colorArray = ['head-style', 'bg-primary']; //bg-primary  bg-info  //head-style -style that changes bg image
 		var colorFlag = 1;
 		    if(i%2 == 0 ){
 		       colorFlag = 0;	
@@ -351,8 +351,8 @@ $(document).ready(function(){
 			}	
 			
 		
-        //getting every day in the loop
-        weather_day = "<div class='myStyle row " + colorArray[colorFlag] +  "' id='weather" + iteration + "'><center>" +  // <div class='row bg-primary' id='weather1'>
+        //getting every day in the loop //.colorAnimate sets smooth changes in image
+        weather_day = "<div class='colorAnimate myStyle row " + colorArray[colorFlag] +  "' id='weather" + iteration + "'><center>" +  // <div class='row bg-primary' id='weather1'>
 		              
 					  // Date and ictyname in <title>
 	                  "<div class='col-sm-1 col-xs-2' title='" +data.city.name + " '>" +
