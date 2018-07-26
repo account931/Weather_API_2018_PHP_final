@@ -11,6 +11,8 @@
     #weatherResult h4{	 
 	    font-size: 1em; 	 
     }
+	
+	
  
     #wLogo{
 	    width:40%;	
@@ -98,8 +100,9 @@
   .myStyle {
 	  padding-top:1em;
 	  padding-bottom:1em;
-	  border:1px solid white;
+	  border:2px solid white;
 	  border-radius:12px;
+	 
   }
   
   .myStyle:hover{
@@ -161,10 +164,13 @@
 .language {
 	position: absolute;
 	right: 34%;
-	top:0.2em;
+	top:0.5em;
 	cursor:pointer;
 	font-size:0.3em;
+	color:white;
 }
+
+.lang {color:white;}
 
 .lang:hover {
 	color: black;
@@ -208,7 +214,15 @@
   
   
   
-  
+  /* Class that sets background-image */
+.head-style{
+	color:white;
+	background-color:lavender;padding:10px;
+	background-image: url('../images/bg-image1.jpg');
+	text-shadow: 1px 1px 2px black, 0 0 1em red; /* Shadow params */
+	/* background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); */
+}
+
   
   
   
@@ -374,12 +388,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b1dbed', end
 
 
 
-/* Class that sets background-image */
-.head-style{
-	color:white;
-	background-color:lavender;padding:10px;
-	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQsQf2-zwuStKf6u2V2HE_nCy9rRvk5M8ag043FAenQbOrCXY3tA');   /* url('../images/bg-pattern.jpg');*/
-	text-shadow: 1px 1px 2px black, 0 0 1em red; /* Shadow params */
-}
 
 

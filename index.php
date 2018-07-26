@@ -44,7 +44,7 @@
 		     <span id="textChange" class="textShadow"> Weather on-line 7 days</span> 
 		     <!--</span> <img src="http://78.media.tumblr.com/tumblr_m2hq5tt3ma1qav3uso1_400.gif" style="width:3%"/>--> 
 			 <img id ="wLogo2" src="images/weather.png"/>
-			 <p class="language"><a class="lang" href="#">UA</a></p>
+			 <p class="language"><a class="lang" href="#">UA</a></p> <!-- LAnguage changer-->
 			 <p class="theme"><a class="them" href="#">*</a></p>
 			 
 		 </h1> 
@@ -161,7 +161,7 @@
 				<div class="col-sm-12 col-xs-12 lavender-color myShadow colorAnimate head-style " id="weather_header">  <!--.head-style sets bg image, .colorAnimate sets animation-->
 				    <!--Weather in <span id='cityName'>Kyiv</span> for 7 days--> <!-- Content NOT USED, content will be JS html-->
 				</div> 
-				<br><br>
+				<br><br><br>
 				
 				
 				<!----Weather Core result-->

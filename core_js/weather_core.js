@@ -118,7 +118,7 @@ $(document).ready(function(){
 	window.cityX = city;
 	$("#cityName").html(city);
 	
-	myAjaxRequest(); //working onLoad !!!!!!!!!!!!!
+	myAjaxRequest(); //working onLoad !!!!!!!!!!!!!  RETURN
 	
 	
 	
@@ -337,7 +337,7 @@ $(document).ready(function(){
 	function constructAjaxResponse(iteration, i, formattedDate, data, dayOfWeek) //(iteration=i+1{to form div id="weather1"}), i=i, formattedDate=29/05,data=whole json answer, dayOfWeek=Sunday)
 	{
 		//getting 2 colors
-		var colorArray = ['head-style', 'bg-primary']; //bg-primary  bg-info  //head-style -style that changes bg image
+		var colorArray = ['head-style', 'head-style']; //bg-primary  bg-info  //head-style -style that changes bg image
 		var colorFlag = 1;
 		    if(i%2 == 0 ){
 		       colorFlag = 0;	
@@ -405,7 +405,7 @@ $(document).ready(function(){
 	
 	
 	
-	
+	//{setApiResponse_Language()}  uses js object {Eng_Ru_Object}
 	function constructAjaxResponseColor(iteration, i, formattedDate, data, dayOfWeek) //(iteration=i+1{to form div id="weather1"}), i=i, formattedDate=29/05,data=whole json answer, dayOfWeek=Sunday)
 	{
 		
@@ -669,7 +669,7 @@ $(document).ready(function(){
     //                                                                                     **
 	 //var daysArr_Ru = ['Воск','Понд','Втор','Сред','Четв','Пятн','Субб'];	//reassigned to Eng_Ru_Object 		 
 						 
-						 
+     //	Used in {setApiResponse_Language()}		 
 	//JS object with all translation for API dynamic response, use Object keys without No blankspace (i.e NOT "light rain", but "light_rain")					 
 	var Eng_Ru_Object = {
 		                Sund:'Воск', Mond:'Понд', Tues:'Втор', Wedn:'Сред', Thurs:'Четв', Frid_:'Пятн', Satur:'Субб', //eng week days name must be the same as in daysArr
@@ -678,6 +678,7 @@ $(document).ready(function(){
 						today:  'сегодня ',
 						Weather_in: 'Погода в',
 						for_7_days: 'на 7 дней',
+						for: ' на',
 						
 						
 		                rain:  'дождь',

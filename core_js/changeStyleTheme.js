@@ -3,6 +3,11 @@ $(document).ready(function(){
 	var wallURL = [
 	
 	    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQsQf2-zwuStKf6u2V2HE_nCy9rRvk5M8ag043FAenQbOrCXY3tA', //violat blocks
+		'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Color_icon_purple.svg/2000px-Color_icon_purple.svg.png', //same in HD
+		'http://www.sensationalcolor.com/wp-content/uploads/2009/12/purple350x350.jpg', //same HD
+		'http://www.color-hex.com/palettes/1835.png',   //!!!!!
+		'http://paperlief.com/images/blue-purple-gradient-wallpaper-2.jpg',  //puprle gradient
+		'http://paperlief.com/images/purple-color-gradient-wallpaper-1.jpg',  //deep blue
 		'http://marcialmiller.com/wordpress/wp-content/uploads/2011/01/AllPatternBlockDesignbyBen-300x266.jpg',
 		'http://marcialmiller.com/wordpress/wp-content/uploads/2011/01/Rowof5Hexagons-300x137.jpg',
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDhtR1BhDwTew8S7AJcbI94v0UFv2pjXwt2kdsqBSxfcgi8uObLg',
@@ -12,13 +17,23 @@ $(document).ready(function(){
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ZKIBvxb64CAuTASJHnrBzqyX_v_QwmJORswtVHC9vU-gvi9JlA',
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmRq-OXCzPXuuxEGABGb3yK1qUeSxPMIBKtzimgUMGKUipjQZztw',
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIkwu2oXo3ZV5VpHJs0BP32y78wQyuts-GBuLcs4PgEqa03SJ0uw',
-		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQONTF91XqYYCUUD8bQFRnRouMRq4Lxp7h0PijXJMpkkjT4Djb0sQ',  //bricks
+		//'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQONTF91XqYYCUUD8bQFRnRouMRq4Lxp7h0PijXJMpkkjT4Djb0sQ',  //bricks
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIgoIVKj2tvvrwKirnEvLIVp7XEE2VpyEB4HVpAopp6p-Jvppe',
-		
+		'https://i0.wp.com/www.citiefy.com/wp-content/uploads/2016/04/Background_47-01-e1459829663432.jpg?fit=450%2C337', // samsung
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQdfBdh9TMh6MZfwbE3gkcyum_qeAv4t0QQ6zRGqGbJAJlWo_P',   //blue
+		'https://img00.deviantart.net/6ad0/i/2008/122/9/8/colorful_gradients_by_scientiaofborg.jpg',
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqyBNgb1If2M5s5u4Eqie-8BnC3D4q3ZgEirc8fXwBtUKiy96E-w',
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSka_Yl4YtYQWSz2T5l64Z9LeVJwdH_LoctsnU_lXZ_BbmDVBka',  //sea
+		'http://notgoaway.com/wp-content/uploads/2017/08/Orange-Wallpaper-158-Go.jpg',  //orange
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWvD8MhkqMhnTziRDDqKmVWvwP2YrZ3Qk55TPs7oxP_DTwYYNrBg',
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTekHPENYuvbwRmIXKoff5JHA1z3vC_XoAwbVXGgyCRE8uX6f26',
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQiLABN0zBTJV8kVyBdef307WbrYkANbnLa03aWcjZ9Dj2l8cL',
+		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjMtl9M8g5BwuOBIWTWCcAVJFLeiGWifLEYl8i2JakRBXXZto',
+		'https://st2.depositphotos.com/4724153/11516/v/950/depositphotos_115160878-stock-illustration-vector-hand-drawn-pattern-for.jpg', //fml portrait
 		
 		
 		 
-	    'https://i.pinimg.com/originals/08/58/d6/0858d6df28c34239fe8e0077e19be750.png',  //cash
+	    //'https://i.pinimg.com/originals/08/58/d6/0858d6df28c34239fe8e0077e19be750.png',  //cash
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQvp8gXVXK0Vb7ctlANuwugGW13OTnAWqriztJUGoBRXd0CXK8',    //blue
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfDxrC1c4GaaJmBlciFeUZ8bsHheWefJXbGiUOFYOnXR5oGrVhAg',  //steel
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScJTFmh8ur7hPYFn543z7OnYh1Kv3d51AQWWFiPDjJH8Bm7O3K',    //blue 2
