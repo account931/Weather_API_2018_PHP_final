@@ -1,7 +1,14 @@
 $(document).ready(function(){
 	
-	var wallURL = [
+	//add .head-style  to desired divs!!!!!!!!!!!!!!
 	
+	var wallURL = [
+	    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjMtl9M8g5BwuOBIWTWCcAVJFLeiGWifLEYl8i2JakRBXXZto',
+	
+	    'http://www.prideinmcalester.com/wp-content/uploads/2016/10/webtreats-seamless-web-background-primary-green-pattern-2-flickr-94133.jpg', //green
+		'https://image.freepik.com/free-vector/yellow-swirls-pattern_1040-37.jpg',  //yellow
+		'https://i.stack.imgur.com/P8Sda.png', //gradient
+		
 	    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQsQf2-zwuStKf6u2V2HE_nCy9rRvk5M8ag043FAenQbOrCXY3tA', //violat blocks
 		'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Color_icon_purple.svg/2000px-Color_icon_purple.svg.png', //same in HD
 		'http://www.sensationalcolor.com/wp-content/uploads/2009/12/purple350x350.jpg', //same HD
@@ -102,7 +109,7 @@ $(document).ready(function(){
 	
 	
 	// Click to change theme
-	$("#changeStyle").click(function() {  
+	$("#changeStyle").click(function() {   
 	    changeBGColor();   
 	}); 
 	
