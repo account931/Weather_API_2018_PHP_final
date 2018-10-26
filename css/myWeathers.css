@@ -2,7 +2,8 @@
 	margin:4%;
   }
 
-  
+/* Span for Reg exp errors */
+.error_req, .sp {color:red;}
   
   
 /* ---------------------------------------- Mobile */
@@ -218,7 +219,7 @@
 .head-style{
 	color:white;
 	background-color:lavender;padding:10px;
-	background-image: url('../images/bg-image1.jpg');
+	background-image: url('../images/bg-image2.jpg');  
 	text-shadow: 1px 1px 2px black, 0 0 1em red; /* Shadow params */
 	/* background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%); */
 }

@@ -21,8 +21,12 @@
       <link rel="stylesheet" type="text/css" media="all" href="css/myWeathers.css">
       <script src="core_js/weather_core.js"></script><!--  Core Random JS-->
 	  <script src="core_js/theme_switcher.js"></script><!--  Theme switcher JS ->DEPRICATED-->
-	  <script src="core_js/changeStyleTheme.js"></script><!--  change wallpapers,changeStyleTheme JS-->
+	  <script src="core_js/changeStyleTheme.js"></script><!-- change wallpapers,changeStyleTheme JS-->
+	  <script src="core_js/validate_regExp.js"></script><!-- City Input RegExp Validation JS -->
 	  
+	  <script src="core_js/autocomplete.js"></script><!-- City Input autocomplete JS -->
+	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!-- City Input autocomplete JS UI, autocomplete won't work without it -->
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> <!-- City Input autocomplete CSS UI, autocomplete won't work without it -->
 	  
 	
 	  
@@ -75,8 +79,14 @@
 		           <!--------Form Start------>	
                    <form action="" id="myFormZ" method="post">
                       <div class="form-group">
-                          <label for="city" id="cityLable">Your city: <span class="glyphicon glyphicon-transfer"></span></label>
+                          <label for="citytext" id="cityLable">Your city: <span class="glyphicon glyphicon-transfer"></span></label>
+						  <!-- RegExp Span -->
+						  <span class="error_req"> &nbsp;* </span> <span class="sp"  id =""> </span>
+						  
                           <input type="text" class="form-control" id="citytext" name="qr" list="character">
+						  
+						  <!--DataList is used alongside with JQ autocomplete UI(used inj IOS only)(core_js/autocomplete.js), as IOS does not support dataList(+ must include JQ_UI.js + JQ_UI.css) -->
+						  
 						  <datalist id="character">
 						      
 							  <option value="Amsterdam"></option>
@@ -108,13 +118,8 @@
 							  <option value="Yakutsk"></option>
 							  <option value="Zhytomyr"></option> 
 							  
-							  
-							  
-							 
-							  
-							  
-							  
 						  </datalist>
+						  
                      </div>
 					<!--
                     <div class="form-group">
