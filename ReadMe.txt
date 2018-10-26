@@ -14,7 +14,7 @@ Weather Php, how it works
 
 6.Index.php uses autoload.php to load all php scripts in Classes folder.
 7.Php file_get_content (apiUrl) is runned by class RunWeatherRequest::askWeatherApi();
-
+8.added: RegExp for English City input only + autocomplete JQ UI (for IOS only). Rest OS use Datalist HTML5
 
 
 
