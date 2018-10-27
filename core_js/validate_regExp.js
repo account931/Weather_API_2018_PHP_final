@@ -1,9 +1,9 @@
 $(document).ready(function(){ 
 	
-    //Rex Exp validation
+    //Rex Exp validation for city input
 	
-	//RegExp for Front-end checking the second input===================================
-    var RegExp_English_Template = /^[a-zA-Z]+$/; //may contain only English chars;   //  /^[a-zA-Z0-9_-]{1,16}\.(gif|jpg|mp3)$/;   //only english letter or ints,(-_) name length (1-16), ends in(.(gif|jpg|mp3)   //was  /^[a-zA-Z]{1,16}$/;
+	//RegExp for Front-end checking the city input===================================
+    var RegExp_English_Template = /^[a-zA-Z\-\s,]+$/;//->{engLetters, - ,blankSpace, comma} //may contain only English chars;   //  /^[a-zA-Z0-9_-]{1,16}\.(gif|jpg|mp3)$/;   //only english letter or ints,(-_) name length (1-16), ends in(.(gif|jpg|mp3)   //was  /^[a-zA-Z]{1,16}$/;
 
 
 // **************************************************************************************
@@ -62,8 +62,8 @@ function myValidate(thisX, id, regExp, butttonToDisable,  message, e)  //{e} -. 
    
      } else {//if  the input is empty, set no  error to span
          thisX.prevAll(".sp:first").html('');
-		 $('#createHall').prop('disabled', false);
-         $('#btnSubmit').html('OK');   
+		 $("#" + butttonToDisable).prop('disabled', false);
+         $("#" + butttonToDisable).html('OK');   
      } 
 }
   
